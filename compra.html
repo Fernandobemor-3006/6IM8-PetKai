@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Compra de Boletos</title>
+    <style>
+        h2{
+            color: white;
+        }
+        .col-md-10, .col-md-2 {
+            background-color:#1E3A8A;
+        }
+        button, .btn {
+        background-color: #1E3A8A;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        }
+        button:hover, .btn:hover {
+        background-color: #4da3ff;
+        }
+        .img1{
+            width: 200px;
+            height: 300px;
+            border: 2px solid #ccc;
+        }
+        .gin{
+            width: 90%;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            outline: none;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row m-0">
+        <div class="col-md-10 p-4 d-flex justify-content-center">
+            <h2 onclick="location.href='seleccionar_eventos.html'">Compra de Boletos</h2>
+        </div>
+        <div class="col-md-2 p-4">
+            <button onclick="location.href='index.html'">Cerrar Sesion</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4 d-flex justify-content-center">
+            <img class="img1"  src="img/doi.png" alt="Vista previa de la imagen">
+        </div>
+        <div class="col-md-8">
+            <h3>Datos del Comprador</h3>
+            <div class="row mt-5">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <input class="gin" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <input class="gin" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-8 d-flex justify-content-center">
+                    <input class="gin" type="text" id="num_tarjeta" name="num_tarjeta" placeholder="Numero de Tarjeta" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <input class="gin" type="text" id="fecha_vencimiento" name="fecha_vencimiento" placeholder="Fecha de Vencimiento" required>
+                </div>
+                <div style="background-color: white;" class="col-md-2 d-flex justify-content-center">
+                    <input class="gin" type="password" id="cvv" name="cvv" placeholder="CVV" required>
+                </div>
+                <div style="background-color: white;" class="col-md-2 d-flex justify-content-center">
+                    <select id="metodos_pago" name="metodos_pago" required>
+                        <option value="Visa">Visa</option>
+                        <option value="Mastercard">Mastercard</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <h5>Cantidad</h5>
+                </div>
+                <div class="col-md-1">
+                    <h5>2</h5>
+                </div>
+                <div class="col-md-3">
+                    <h5>Total</h5>
+                </div>
+                <div class="col-md-1">
+                    <h5>$1200</h5>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-8 d-flex justify-content-center">
+                    <button onclick="location.href='validacion_boleto.html'">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Agregar Nuevo Evento</title>
+        <style>
+            h2{
+                color: white;
+            }
+            .col-md-10, .col-md-2 {
+                background-color:#1E3A8A;
+            }
+            button, .btn {
+            background-color: #1E3A8A;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            }
+            button:hover, .btn:hover {
+            background-color: #4da3ff;
+            }
+            .img1{
+                width: 200px;
+                height: 300px;
+                border: 2px solid #ccc;
+            }
+            .gin{
+                width: 90%;
+                padding: 5px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 2px solid #ccc;
+                outline: none;
+                margin-top: 12px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row m-0">
+            <div class="col-md-10 p-4 d-flex justify-content-center">
+                <h2>Agregar Nuevo Evento</h2>
+            </div>
+            <div class="col-md-2 p-4">
+                <button onclick="location.href='index.html'">Cerrar Sesion</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6 d-flex justify-content-center">
+                <img id="preview" class="img1"  src="img/aviso3.png" alt="Vista previa de la imagen">
+            </div>
+            <div class="col-md-6">
+                <input class="gin" type="text" id="nombre_evento" name="nombre_evento" placeholder="Nombre del Evento" required>
+                <div class="row m-0">
+                    <input class="gin" type="text" id="lugar_evento" name="lugar_evento" placeholder="Lugar del Evento" required>
+                </div>
+                <div class="row m-0">
+                    <label for="fecha_evento">Fecha del Evento: </label>
+                    <input class="gin" type="date" id="fecha_evento" name="fecha_evento" required>
+                </div>
+                <div class="row m-0">
+                    <label for="hora_evento">Hora del Evento: </label>
+                    <input class="gin" type="time" id="hora_evento" name="hora_evento" required>
+                </div>
+                <div class="row m-0">
+                    <input class="gin" type="text" id="cantidad_boleto" name="cantidad_boleto" placeholder="Cantidad de Boletos" required>
+                </div>
+            </div>
+        </div>  
+        <div class="row m-0 p-5">
+            <div class="col-md-6 d-flex justify-content-center">
+                <input type="file" id="imagen_evento" name="imagen_evento" accept="image/*" required>
+            </div>
+            <script>
+                document.getElementById('imagen_evento').addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const preview = document.getElementById('preview');
+                            preview.src = e.target.result;
+                            preview.style.display = 'block';
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            </script>
+            <div class="col-md-6 d-flex justify-content-center">
+                <button type="submit" onclick="location.href='vista_principal.html'">Agregar</button>
+                <button type="submit" onclick="location.href='vista_principal.html'">Cancelar</button>
+            </div>
+        </div>
+    </body>
+</html>
